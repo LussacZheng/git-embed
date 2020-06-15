@@ -1,0 +1,113 @@
+# A log of running `npm run dist` in CMD console window
+# git-embed@0.1.0
+
+
+D:\WorkSpace\GitHub\git-embed>npm run dist
+
+> git-embed@0.1.0 dist D:\WorkSpace\GitHub\git-embed
+> node src/index.js
+
+--- Start preparing...
+
+1 Downloading "MinGit-2.27.0-32-bit.zip" ...
+  * https://github.com/git-for-windows/git/releases/download/v2.27.0.windows.1/MinGit-2.27.0-32-bit.zip
+  2020-06-15 22:09:10
+  MinGit-2.27.0-32-bit.zip | 100% [=============================>] 23.71/23.71MB  4.19MB/s  eta:  0s
+  2020-06-15 22:09:16 (4.19 MB/s) - 'MinGit-2.27.0-32-bit.zip' saved [24857196/24857196]  in 5.664s
+
+2 Downloading "MinGit-2.27.0-64-bit.zip" ...
+  * https://github.com/git-for-windows/git/releases/download/v2.27.0.windows.1/MinGit-2.27.0-64-bit.zip
+  2020-06-15 22:09:19
+  MinGit-2.27.0-64-bit.zip | 100% [=============================>] 23.57/23.57MB  3.71MB/s  eta:  0s
+  2020-06-15 22:09:25 (3.71 MB/s) - 'MinGit-2.27.0-64-bit.zip' saved [24709749/24709749]  in 6.355s
+
+--- All prepared.
+
+
+--- Start cleaning...
+
+1 Emptying the temp directory:
+  * D:\WorkSpace\GitHub\git-embed\build\temp\
+
+2 Removing the dist files of "2.27.0" ...
+  * D:\WorkSpace\GitHub\git-embed\dist\git-embed_2.27.0_win32.mini.zip
+  * D:\WorkSpace\GitHub\git-embed\dist\git-embed_2.27.0_win32.ssl.zip
+  * D:\WorkSpace\GitHub\git-embed\dist\git-embed_2.27.0_win64.mini.zip
+  * D:\WorkSpace\GitHub\git-embed\dist\git-embed_2.27.0_win64.ssl.zip
+
+--- All cleaned.
+
+
+--- Start building...
+
+1 Building "win32-mini" ...
+  * Exacting the required executable files into:
+    D:\WorkSpace\GitHub\git-embed\build\temp\win32-mini\bin\
+    MinGit-2.27.0-32-bit.zip | 100% [==============================]
+  * Exacting the required document files into:
+    D:\WorkSpace\GitHub\git-embed\build\temp\win32-mini\
+    MinGit-2.27.0-32-bit.zip | 100% [==============================]
+  * Copying the static files from:
+    D:\WorkSpace\GitHub\git-embed\build\static\
+  * Copying the documentation from:
+    D:\WorkSpace\GitHub\git-embed\doc\
+  * Copying the special files:
+    "README.md" to D:\WorkSpace\GitHub\git-embed\build\temp\win32-mini\
+    "LICENSE" to D:\WorkSpace\GitHub\git-embed\build\temp\win32-mini\doc\
+  * Packaging all the files into:
+    D:\WorkSpace\GitHub\git-embed\dist\git-embed_2.27.0_win32.mini.zip
+
+2 Building "win32-ssl" ...
+  * Exacting the required executable files into:
+    D:\WorkSpace\GitHub\git-embed\build\temp\win32-ssl\bin\
+    MinGit-2.27.0-32-bit.zip | 100% [==============================]
+  * Exacting the required document files into:
+    D:\WorkSpace\GitHub\git-embed\build\temp\win32-ssl\
+    MinGit-2.27.0-32-bit.zip | 100% [==============================]
+  * Copying the static files from:
+    D:\WorkSpace\GitHub\git-embed\build\static\
+  * Copying the documentation from:
+    D:\WorkSpace\GitHub\git-embed\doc\
+  * Copying the special files:
+    "README.md" to D:\WorkSpace\GitHub\git-embed\build\temp\win32-ssl\
+    "LICENSE" to D:\WorkSpace\GitHub\git-embed\build\temp\win32-ssl\doc\
+  * Packaging all the files into:
+    D:\WorkSpace\GitHub\git-embed\dist\git-embed_2.27.0_win32.ssl.zip
+
+3 Building "win64-mini" ...
+  * Exacting the required executable files into:
+    D:\WorkSpace\GitHub\git-embed\build\temp\win64-mini\bin\
+    MinGit-2.27.0-64-bit.zip | 100% [==============================]
+  * Exacting the required document files into:
+    D:\WorkSpace\GitHub\git-embed\build\temp\win64-mini\
+    MinGit-2.27.0-64-bit.zip | 100% [==============================]
+  * Copying the static files from:
+    D:\WorkSpace\GitHub\git-embed\build\static\
+  * Copying the documentation from:
+    D:\WorkSpace\GitHub\git-embed\doc\
+  * Copying the special files:
+    "README.md" to D:\WorkSpace\GitHub\git-embed\build\temp\win64-mini\
+    "LICENSE" to D:\WorkSpace\GitHub\git-embed\build\temp\win64-mini\doc\
+  * Packaging all the files into:
+    D:\WorkSpace\GitHub\git-embed\dist\git-embed_2.27.0_win64.mini.zip
+
+4 Building "win64-ssl" ...
+  * Exacting the required executable files into:
+    D:\WorkSpace\GitHub\git-embed\build\temp\win64-ssl\bin\
+    MinGit-2.27.0-64-bit.zip | 100% [==============================]
+  * Exacting the required document files into:
+    D:\WorkSpace\GitHub\git-embed\build\temp\win64-ssl\
+    MinGit-2.27.0-64-bit.zip | 100% [==============================]
+  * Copying the static files from:
+    D:\WorkSpace\GitHub\git-embed\build\static\
+  * Copying the documentation from:
+    D:\WorkSpace\GitHub\git-embed\doc\
+  * Copying the special files:
+    "README.md" to D:\WorkSpace\GitHub\git-embed\build\temp\win64-ssl\
+    "LICENSE" to D:\WorkSpace\GitHub\git-embed\build\temp\win64-ssl\doc\
+  * Packaging all the files into:
+    D:\WorkSpace\GitHub\git-embed\dist\git-embed_2.27.0_win64.ssl.zip
+
+--- All built.
+
+D:\WorkSpace\GitHub\git-embed>
