@@ -46,6 +46,8 @@ const GIT = {
           'libnghttp2-14.dll',
           'libssh2-1.dll',
           'libssl-1_1.dll',
+          'libbrotlidec.dll',
+          'libbrotlicommon.dll',
         ],
         ssl: {
           certs: ['ca-bundle.crt'],
@@ -88,6 +90,8 @@ const GIT = {
           'libnghttp2-14.dll',
           'libssh2-1.dll',
           'libssl-1_1-x64.dll',
+          'libbrotlidec.dll',
+          'libbrotlicommon.dll',
         ],
         ssl: {
           certs: ['ca-bundle.crt'],
