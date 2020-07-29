@@ -55,11 +55,22 @@ function formatLocaleString(timeStamp) {
   // and the `timeStamp` is '1584994553000'
   // So UTC time '2020-03-23T20:15:53Z' now
 
-  const localeStr = new Date(timeStamp).toLocaleString()
-  // now localStr == '2020-3-24 04:15:53'
+  const localeStr = new Date(timeStamp).toLocaleString('default', {
+    formatMatcher: 'best fit',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  })
+  // now localeStr == '2020/03/24 04:15:53'
+  //   If there is no params for `toLocaleString()`,
+  //   localeStr will be '2020/3/24 上午4:15:53'
 
-  // Assume the locale time is UTC time to get ISO string,
-  // since ISO string is alway formatted, like: 'YYYY-MM-DDTHH:mm:ss.SSSZ'
+  // Since ISO string is alway formatted, like: 'YYYY-MM-DDTHH:mm:ss.SSSZ'
+  // To get ISO string, we assume the locale time is just the UTC time.
   let str = new Date(localeStr + ' UTC').toISOString().substr(0, 19)
   // now str == '2020-03-24T04:15:53'
 
