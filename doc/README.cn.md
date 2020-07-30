@@ -1,5 +1,10 @@
 # git-embed
 
+![platform](https://img.shields.io/badge/platform-Windows-brightgreen?logo=windows)
+![GitHub release](https://img.shields.io/github/v/release/LussacZheng/git-embed?include_prereleases&label=build)
+[![Latest version of Git](https://img.shields.io/github/v/release/git-for-windows/git?label=git&color=f14e32&logo=git)](https://github.com/git-for-windows/git)
+[![GitHub All Releases](https://img.shields.io/github/downloads/LussacZheng/git-embed/total?color=green&logo=github)](https://github.com/LussacZheng/git-embed/releases)
+
 在 Windows 上构建嵌入式的 git 以用于 `git clone` 和 `git pull` 。
 
 ## 使用方法
@@ -31,7 +36,7 @@ git clone https://github.com/LussacZheng/git-embed.git
 git clone https://github.com/LussacZheng/git-embed.git
 ```
 
-但 "ssl" 包的文件大小 (\~6.2 MB) 会远大于 "mini" (\~2.5 MB) 。
+但 "ssl" 包的文件大小 (\~13 MB) 会远大于 "mini" (\~5 MB) 。
 
 ### 开始使用
 
@@ -44,6 +49,8 @@ $ tree
 │   ├── ca-bundle.crt                # SSL 证书
 │   ├── git.exe
 │   ├── git-remote-https.exe         # HTTPS 支持
+│   ├── libbrotlicommon.dll
+│   ├── libbrotlidec.dll
 │   ├── libcrypto-1_1-x64.dll
 │   ├── libcurl-4.dll
 │   ├── libiconv-2.dll
@@ -111,11 +118,13 @@ npm run dist
 
 This program is distributed under the [MIT license](https://github.com/LussacZheng/git-embed/blob/master/LICENSE).
 
-**Notice:** The scripts of this repository is used to re-package the released binaries of [MinGit](https://github.com/git-for-windows/git). MinGit is distributed under the [GPLv2 license](https://github.com/git-for-windows/git/blob/master/COPYING).
+**Notice:** The scripts of this repository is used to re-package the released binaries of [MinGit](https://github.com/git-for-windows/git). MinGit is released under the [GPLv2 license](https://github.com/git-for-windows/git/blob/master/COPYING).
 
 ## TODO
 
 当前项目只是处于勉强可以使用的状态。
 
 - 应改进异常处理流程。
+- 能够构建指定版本的 MinGit 。
+- 重构为命令行程序(cli)。
 - ...
