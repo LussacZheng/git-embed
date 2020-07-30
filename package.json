@@ -9,8 +9,11 @@
   "keywords": [
     "git-embed",
     "git",
-    "embeddable",
-    "embedded"
+    "git-for-windows",
+    "mingit",
+    "embed",
+    "embedded",
+    "embeddable"
   ],
   "author": {
     "name": "Lussac Zheng"
