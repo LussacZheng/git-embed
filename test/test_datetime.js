@@ -2,13 +2,17 @@
 
 const { formatLocaleString } = require('../src/utils/helper')
 
-const timeStamp = 1584994553000 // UTC '2020-03-23T20:15:53Z'
+// UTC '2020-03-23T20:15:53Z' while '2020/03/24 04:15:53' in 'Asia/Shanghai'
+const sometime = 1584994553000
 const now = Date.now()
 
-console.log(formatLocaleString(formatLocaleString(timeStamp)))
-console.log(formatLocaleString(now))
+console.log('formatLocaleString(sometime):', formatLocaleString(sometime))
+console.log('formatLocaleString(now):     ', formatLocaleString(now))
+console.log()
 
+// No detailed params
 let str1 = new Date(now).toLocaleString()
+// With detailed params
 let str2 = new Date(now).toLocaleString('default', {
   formatMatcher: 'best fit',
   year: 'numeric',
@@ -20,5 +24,5 @@ let str2 = new Date(now).toLocaleString('default', {
   hour12: false,
 })
 
-console.log(str1)
-console.log(str2)
+console.log('toLocaleString():                ', str1)
+console.log('toLocaleString(locales, options):', str2)
