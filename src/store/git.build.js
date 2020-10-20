@@ -38,6 +38,7 @@ const GIT = {
           'libgcc_s_dw2-1.dll',
           'libwinpthread-1.dll',
           // The above files are the same as GIT.win32.mini
+          'git-remote-http.exe',
           'git-remote-https.exe',
           'libcurl-4.dll',
           'libcrypto-1_1.dll',
@@ -48,6 +49,7 @@ const GIT = {
           'libssl-1_1.dll',
           'libbrotlidec.dll',
           'libbrotlicommon.dll',
+          'libzstd.dll',
         ],
         ssl: {
           certs: ['ca-bundle.crt'],
@@ -81,6 +83,7 @@ const GIT = {
           'libssp-0.dll',
           'zlib1.dll',
           // The above files are the same as GIT.win64.mini
+          'git-remote-http.exe',
           'git-remote-https.exe',
           'libcurl-4.dll',
           'libwinpthread-1.dll',
@@ -92,6 +95,7 @@ const GIT = {
           'libssl-1_1-x64.dll',
           'libbrotlidec.dll',
           'libbrotlicommon.dll',
+          'libzstd.dll',
         ],
         ssl: {
           certs: ['ca-bundle.crt'],
