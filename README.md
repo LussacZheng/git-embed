@@ -38,7 +38,7 @@ The package “ssl”, with all the contents of "mini", contains some additional
 git clone https://github.com/LussacZheng/git-embed.git
 ```
 
-But the file size of "ssl" package (\~13 MB) is much larger than that of "mini" (\~5 MB).
+But the file size of "ssl" package (\~16 MB) is much larger than that of "mini" (\~5 MB).
 
 ### Getting Started
 
@@ -50,6 +50,7 @@ $ tree
 ├── bin                          # Binaries and DLLs of git
 │   ├── ca-bundle.crt                # SSL CA file
 │   ├── git.exe
+│   ├── git-remote-http.exe          # HTTP support
 │   ├── git-remote-https.exe         # HTTPS support
 │   ├── libbrotlicommon.dll
 │   ├── libbrotlidec.dll
@@ -65,6 +66,7 @@ $ tree
 │   ├── libssp-0.dll
 │   ├── libunistring-2.dll
 │   ├── libwinpthread-1.dll
+│   ├── libzstd.dll
 │   └── zlib1.dll
 ├── doc                          # Documentation
 │   ├── LICENSE                      # MIT license of this repository (git-embed)

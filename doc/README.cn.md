@@ -36,7 +36,7 @@ git clone https://github.com/LussacZheng/git-embed.git
 git clone https://github.com/LussacZheng/git-embed.git
 ```
 
-但 "ssl" 包的文件大小 (\~13 MB) 会远大于 "mini" (\~5 MB) 。
+但 "ssl" 包的文件大小 (\~16 MB) 会远大于 "mini" (\~5 MB) 。
 
 ### 开始使用
 
@@ -48,6 +48,7 @@ $ tree
 ├── bin                          # git 的二进制程序和 DLL 文件
 │   ├── ca-bundle.crt                # SSL 证书
 │   ├── git.exe
+│   ├── git-remote-http.exe          # HTTP 支持
 │   ├── git-remote-https.exe         # HTTPS 支持
 │   ├── libbrotlicommon.dll
 │   ├── libbrotlidec.dll
@@ -63,6 +64,7 @@ $ tree
 │   ├── libssp-0.dll
 │   ├── libunistring-2.dll
 │   ├── libwinpthread-1.dll
+│   ├── libzstd.dll
 │   └── zlib1.dll
 ├── doc                          # 文档
 │   ├── LICENSE                      # 该代码仓库 (git-embed) 的 MIT 许可证
