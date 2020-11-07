@@ -3,19 +3,19 @@
 // Set the default info in case network error
 const _git_info = {
   _api: 'https://api.github.com/repos/git-for-windows/git/releases/latest',
-  version: '2.29.0',
+  version: '2.29.2.2',
   file: {
     win32: {
-      name: 'MinGit-2.29.0-32-bit.zip',
-      size: 23102913,
+      name: 'MinGit-2.29.2.2-32-bit.zip',
+      size: 23105984,
       url:
-        'https://github.com/git-for-windows/git/releases/download/v2.29.0.windows.1/MinGit-2.29.0-32-bit.zip',
+        'https://github.com/git-for-windows/git/releases/download/v2.29.2.windows.2/MinGit-2.29.2.2-32-bit.zip',
     },
     win64: {
-      name: 'MinGit-2.29.0-64-bit.zip',
-      size: 26323704,
+      name: 'MinGit-2.29.2.2-64-bit.zip',
+      size: 26327221,
       url:
-        'https://github.com/git-for-windows/git/releases/download/v2.29.0.windows.1/MinGit-2.29.0-64-bit.zip',
+        'https://github.com/git-for-windows/git/releases/download/v2.29.2.windows.2/MinGit-2.29.2.2-64-bit.zip',
     },
   },
 }

@@ -10,7 +10,10 @@ const GitInfo = require('../store/git.info')
 async function updateGitInfo() {
   try {
     const data = await get(GitInfo.getAPI())
-    let version = /^Git for Windows ([\d\.]+)$/i.exec(data.name)[1]
+    let versionInfo = /^Git for Windows ([\d\.]+)(\((\d+)\))?$/i.exec(data.name)
+    //      If data.name == "Git for Windows 2.29.2", version = "2.29.2"
+    // else if data.name == "Git for Windows 2.29.2(2)", version = "2.29.2.2"
+    let version = versionInfo[1] + (versionInfo[3] === undefined ? '' : '.' + versionInfo[3])
     const isReleaseResolvable = GitInfo.setVersion(version)
     if (isReleaseResolvable) {
       return updateFileInfo(data)
