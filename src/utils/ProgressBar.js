@@ -42,7 +42,7 @@ function getDecompressBar(filename) {
     barCompleteChar: '=',
     barIncompleteChar: ' ',
     barsize: 30,
-    hideCursor: true,
+    // hideCursor: true,
     autopadding: true,
   })
   return bar
