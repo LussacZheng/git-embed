@@ -56,6 +56,7 @@ function formatLocaleString(timeStamp) {
   // So UTC time '2020-03-23T20:15:53Z' now
 
   const localeStr = new Date(timeStamp).toLocaleString('default', {
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
     formatMatcher: 'best fit',
     year: 'numeric',
     month: '2-digit',
@@ -63,7 +64,9 @@ function formatLocaleString(timeStamp) {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
-    hour12: false,
+    // hour12: false,
+    // https://github.com/moment/luxon/issues/675
+    hourCycle: 'h23',
   })
   // now localeStr == '2020/03/24 04:15:53'
   //   If there is no params for `toLocaleString()`,
