@@ -1,6 +1,6 @@
 'use strict'
 
-const { get } = require('../network/request')
+const { get } = require('./request')
 const GitInfo = require('../store/git.info')
 
 /**

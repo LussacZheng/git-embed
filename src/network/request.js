@@ -2,6 +2,8 @@
 
 const got = require('got')
 
+const { getProxyAgent } = require('./proxy')
+
 const _Options = {
   headers: {
     accept: 'application/json;charset=utf-8',
@@ -15,7 +17,14 @@ const _Options = {
  * @param {RequestInit} init
  */
 async function get(url, init = _Options) {
-  const response = await got(url, init)
+  const proxyAgent = getProxyAgent(url)
+
+  const response = await got(
+    url,
+    Object.assign({}, init, {
+      agent: { http: proxyAgent, https: proxyAgent },
+    }),
+  )
   return gatherResponse(response)
 }
 

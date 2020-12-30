@@ -8,6 +8,7 @@ const pipeline = promisify(stream.pipeline)
 
 const got = require('got')
 
+const { getProxyAgent } = require('./proxy')
 const { ensureDir } = require('../fs/fs.utils')
 const { DownloadProgressBar } = require('../utils/ProgressBar')
 const Bytes = require('../utils/Bytes')
@@ -28,7 +29,10 @@ async function download(url, destDir) {
   let totalSize = []
   let receivedBytes = 0
 
-  const myStream = got.stream(url)
+  const proxyAgent = getProxyAgent(url)
+  const myStream = got.stream(url, {
+    agent: { http: proxyAgent, https: proxyAgent },
+  })
 
   myStream.on('response', (response) => {
     const headers = response.headers
