@@ -11,7 +11,7 @@ const got = require('got')
 const { ensureDir } = require('../fs/fs.utils')
 const { DownloadProgressBar } = require('../utils/ProgressBar')
 const Bytes = require('../utils/Bytes')
-const { formatLocaleString, printWithSpace } = require('../utils/helper')
+const { formatLocaleString, formatTotalTime, printWithSpace } = require('../utils/helper')
 
 /**
  * @async
@@ -53,7 +53,7 @@ async function download(url, destDir) {
     bar.update(receivedBytes, receivedSize, speed)
   })
 
-  myStream.on('error', (error) => {
+  myStream.on('error', (err) => {
     bar.stop()
     throw new Error(err.message)
   })
@@ -66,11 +66,11 @@ async function download(url, destDir) {
   bar.stop()
   const endTime = Date.now()
   const averageSpeed = Bytes.getSpeed(totalBytes, startTime, endTime)
-  const totalTime = (endTime - startTime) / 1000
+  const totalTime = formatTotalTime(startTime, endTime)
   printWithSpace(
     `${formatLocaleString(endTime)} (${averageSpeed[0]} ${
       averageSpeed[1]
-    }/s) - '${filename}' saved [${receivedBytes}/${totalBytes}]  in ${totalTime}s`,
+    }/s) - '${filename}' saved [${receivedBytes}/${totalBytes}]  in ${totalTime}`,
   )
 }
 

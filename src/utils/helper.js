@@ -78,6 +78,61 @@ function formatLocaleString(timeStamp) {
 }
 
 /**
+ * @param {Number} startTime TimeStamp or millisecond
+ * @param {Number} endTime TimeStamp or millisecond
+ * @param {'auto'|'second'|'minute'|'hour'} preferred Formatted based / Largest allowed units
+ * @param {Number} decimals Used for `seconds.toFixed(decimals)`
+ * @returns {String} Formatted time string
+ * @example
+ * formatTotalTime(0,12345678) === '3h 25m 45.68s'
+ * formatTotalTime(0,12345678, 'minute', 3) === '205m 45.678s'
+ */
+function formatTotalTime(startTime, endTime, preferred = 'auto', decimals = 2) {
+  const dm = decimals < 0 ? 0 : decimals
+
+  const time = Math.abs(endTime - startTime) / 1000
+  let hour = Math.floor(time / 3600)
+  let min = Math.floor((time % 3600) / 60)
+  // sec is String while hour and min are Number.
+  let sec = (time % 60).toFixed(dm)
+
+  // carry, '1h 59m 59.999s' => '2h 0m 0s'
+  if (sec.startsWith('60')) {
+    min++
+    sec = '0'
+  }
+  if (min === 60) {
+    hour++
+    min = 0
+  }
+
+  // console.log(hour, min, sec)
+
+  if (preferred === 'auto') {
+    if (hour === 0) {
+      if (min === 0) {
+        preferred = 'second'
+      } else {
+        preferred = 'minute'
+      }
+    } else {
+      preferred = 'hour'
+    }
+  }
+
+  switch (preferred) {
+    case 'second':
+      return time.toFixed(dm) + 's'
+    case 'minute':
+      return `${hour * 60 + min}m ${sec}s`
+    case 'hour':
+      return `${hour}h ${min}m ${sec}s`
+    default:
+      return time.toFixed(dm) + 's'
+  }
+}
+
+/**
  * @param {*} message
  * @param {Number} whiteSpaces
  */
@@ -85,4 +140,10 @@ function printWithSpace(message, whiteSpaces = 2) {
   console.log(' '.repeat(whiteSpaces - 1), message)
 }
 
-module.exports = { tree2path, template, formatLocaleString, printWithSpace }
+module.exports = {
+  tree2path,
+  template,
+  formatLocaleString,
+  formatTotalTime,
+  printWithSpace,
+}
