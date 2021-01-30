@@ -128,7 +128,9 @@ This program is distributed under the [MIT license](https://github.com/LussacZhe
 
 The current project is just in a state where it can just simply work.
 
-- The exception handling is supposed to be improved.
-- Be able to build from a specified version of MinGit.
-- Make it became a command-line program.
-- ...
+- [x] Apply `HTTP(S)_ROXY` from the environment variables.
+- [ ] Automatically analyze DLL dependencies from Portable Executable (PE) files.
+- [ ] The exception handling is supposed to be improved.
+- [ ] Be able to build from a specified version of MinGit.
+- [ ] Make it became a command-line program.
+- [ ] ...

@@ -45,7 +45,7 @@ git clone https://github.com/LussacZheng/git-embed.git
 ```shell
 $ tree
 .
-├── bin                          # git 的二进制程序和 DLL 文件
+├── bin                          # git 的二进制程序和 DLL 依赖
 │   ├── ca-bundle.crt                # SSL 证书
 │   ├── git.exe
 │   ├── git-remote-http.exe          # HTTP 支持
@@ -126,7 +126,9 @@ This program is distributed under the [MIT license](https://github.com/LussacZhe
 
 当前项目只是处于勉强可以使用的状态。
 
-- 应改进异常处理流程。
-- 能够构建指定版本的 MinGit 。
-- 重构为命令行程序(cli)。
-- ...
+- [x] 从环境变量中读取 `HTTP(S)_ROXY` 。
+- [ ] 自动从 Portable Executable (PE) 文件中分析 DLL 依赖。
+- [ ] 应改进异常处理流程。
+- [ ] 能够构建指定版本的 MinGit 。
+- [ ] 重构为命令行程序 (CLI) 。
+- [ ] ...
