@@ -126,7 +126,7 @@ This program is distributed under the [MIT license](https://github.com/LussacZhe
 
 当前项目只是处于勉强可以使用的状态。
 
-- [x] 从环境变量中读取 `HTTP(S)_ROXY` 。
+- [x] 从环境变量中读取 `HTTP(S)_PROXY` 。
 - [ ] 自动从 Portable Executable (PE) 文件中分析 DLL 依赖。
 - [ ] 应改进异常处理流程。
 - [ ] 能够构建指定版本的 MinGit 。
