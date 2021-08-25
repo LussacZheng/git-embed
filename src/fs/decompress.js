@@ -52,7 +52,7 @@ async function decompress(filePath, destDir, requiredFiles) {
     const bar = new DecompressProgressBar(filename)
     bar.start()
 
-    myStream.on('progress', (progress) => {
+    myStream.on('progress', progress => {
       bar.update(progress.percent)
     })
 
@@ -62,7 +62,7 @@ async function decompress(filePath, destDir, requiredFiles) {
       resolve(true)
     })
 
-    myStream.on('error', (err) => {
+    myStream.on('error', err => {
       console.error(err.stderr)
       reject(false)
     })

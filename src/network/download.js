@@ -34,7 +34,7 @@ async function download(url, destDir) {
     agent: { http: proxyAgent, https: proxyAgent },
   })
 
-  myStream.on('response', (response) => {
+  myStream.on('response', response => {
     const headers = response.headers
     // console.log(headers['last-modified'])
 
@@ -47,7 +47,7 @@ async function download(url, destDir) {
     bar.start(totalBytes, totalSize)
   })
 
-  myStream.on('downloadProgress', (progress) => {
+  myStream.on('downloadProgress', progress => {
     // console.log(progress)
     let nowTime = Date.now()
     receivedBytes = progress.transferred
@@ -57,7 +57,7 @@ async function download(url, destDir) {
     bar.update(receivedBytes, receivedSize, speed)
   })
 
-  myStream.on('error', (err) => {
+  myStream.on('error', err => {
     bar.stop()
     throw new Error(err.message)
   })

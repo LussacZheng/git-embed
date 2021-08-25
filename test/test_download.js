@@ -19,7 +19,6 @@ function random(min, max) {
 }
 
 ;(async () => {
-  const url = urls[random(0,urls.length)]
+  const url = urls[random(0, urls.length)]
   await download(url, path.resolve(__dirname, './temp/'))
 })()
-

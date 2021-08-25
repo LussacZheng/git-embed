@@ -33,7 +33,7 @@ async function updateGitInfo() {
 function updateFileInfo(data) {
   let allStatus = []
   const assets = data.assets
-  assets.forEach((asset) => {
+  assets.forEach(asset => {
     if (/MinGit-[\d\.]+-32-bit.zip/i.test(asset.name)) {
       allStatus.push(
         GitInfo.setFileName(asset.name, 'win32'),
@@ -51,7 +51,7 @@ function updateFileInfo(data) {
   })
 
   // As long as there is one false in `allStatus`, return `false`
-  return allStatus.every((status) => status === true)
+  return allStatus.every(status => status === true)
 }
 
 module.exports = { updateGitInfo }

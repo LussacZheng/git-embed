@@ -27,7 +27,7 @@ async function compress(sourceDir, destFilePath) {
   const zipStream = new compressing.zip.Stream()
 
   const sourceList = fs.readdirSync(sourceDir)
-  sourceList.forEach((source) => {
+  sourceList.forEach(source => {
     const sourcePath = path.join(sourceDir, source)
     if (fs.existsSync(sourcePath)) {
       zipStream.addEntry(sourcePath)
@@ -36,7 +36,7 @@ async function compress(sourceDir, destFilePath) {
 
   const destStream = fs.createWriteStream(destFilePath)
 
-  pump(zipStream, destStream, (err) => {
+  pump(zipStream, destStream, err => {
     if (err) {
       console.error('Failed when compressing files.\n', err)
       return false

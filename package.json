@@ -4,6 +4,7 @@
   "description": "Build embeddable git for `git clone` and `git pull` on Windows.",
   "main": "src/index.js",
   "scripts": {
+    "format": "prettier --write \"{src,test}/**/*.{js,css,json,md}\"",
     "dist": "node src/index.js"
   },
   "keywords": [
@@ -38,5 +39,7 @@
     "pump": "^3.0.0",
     "tunnel": "0.0.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "prettier": "^2.3.2"
+  }
 }

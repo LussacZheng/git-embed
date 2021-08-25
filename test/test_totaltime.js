@@ -13,7 +13,7 @@ function printTotalTime(millisecond, preferred) {
 
 function printAllKindsOfTotalTime(millisecond) {
   const preferredList = ['auto', 'hour', 'minute', 'second']
-  preferredList.forEach((p) => {
+  preferredList.forEach(p => {
     printTotalTime(millisecond, p)
   })
 }
@@ -28,13 +28,13 @@ const timeList = [
   [75678, 'auto'],
   [45678, 'auto'],
 ]
-timeList.forEach((t) => {
+timeList.forEach(t => {
   printTotalTime(t[0], t[1])
 })
 
 // Some special cases:
 const specialTimeList = [10845678, 12599999, 14399999, 3599999, 1799999, 59999]
-specialTimeList.forEach((t) => {
+specialTimeList.forEach(t => {
   console.log('\n------------------------------')
   printAllKindsOfTotalTime(t)
   console.log()

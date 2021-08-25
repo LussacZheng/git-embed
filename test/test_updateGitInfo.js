@@ -9,7 +9,7 @@ async function test_updateGitInfo() {
 
   // Get the hidden hook function form the Class "GitInfo"
   const methods = Reflect.ownKeys(GitInfo)
-  const inner = methods.find((method) => method.toString() === 'Symbol(inner)')
+  const inner = methods.find(method => method.toString() === 'Symbol(inner)')
 
   const fake_git_info = {
     _api: 'https://api.github.com/repos/git-for-windows/git/releases/latest',

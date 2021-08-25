@@ -10,12 +10,12 @@ function tree2path(treeObj, prefix = '') {
   let results = []
   const isInnermostDir = treeObj instanceof Array
   if (isInnermostDir) {
-    return treeObj.map((file) => prefix.replace('__this/', '') + file)
+    return treeObj.map(file => prefix.replace('__this/', '') + file)
   }
   for (const dir in treeObj) {
     const saveCurrentPrefix = prefix
     prefix = prefix + dir + '/'
-    tree2path(treeObj[dir], prefix).forEach((path) => {
+    tree2path(treeObj[dir], prefix).forEach(path => {
       results.push(path)
     })
     prefix = saveCurrentPrefix
